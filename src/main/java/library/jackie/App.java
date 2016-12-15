@@ -27,7 +27,6 @@ import org.apache.lucene.store.FSDirectory;
  */
 public class App 
 {
-    @SuppressWarnings("resource")
 	public static void main( String[] args )
     {
     	String[] content = {"中国", "印度", "日本", "俄国", "英国", "美丽的国家"};
