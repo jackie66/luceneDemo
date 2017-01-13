@@ -39,7 +39,16 @@
     <artifactId>lucene-queryparser</artifactId>
     <version>6.3.0</version>
 </dependency>
-
+<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.3.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.3.6</version>
+		</dependency>
 
 
 </dependencies>
