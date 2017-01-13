@@ -1,6 +1,6 @@
 package library.jackie;
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
 import java.nio.file.Paths;
 
@@ -27,9 +27,10 @@ import org.apache.lucene.store.FSDirectory;
  */
 public class App 
 {
+    @SuppressWarnings("resource")
 	public static void main( String[] args )
     {
-    	String[] content = {"中国", "印度", "日本书房", "俄国", "英国", "美丽的国家"};
+    	String[] content = {"中国", "印度", "日本", "俄国", "英国", "美丽的国家"};
     	File file = new File("index");
     	 try {
 			Directory dir = FSDirectory.open(Paths.get(file.toURI()));
@@ -64,7 +65,7 @@ public class App
 			IndexReader reader = DirectoryReader.open(FSDirectory.open(Paths.get(file.toURI())));
 			IndexSearcher searcher = new IndexSearcher(reader);
 			QueryParser parser = new QueryParser("name",new SmartChineseAnalyzer());
-			Query query = parser.parse("美丽书房里绝对是发了 ");
+			Query query = parser.parse("美丽");
 			ScoreDoc[] hits = searcher.search(query, 10).scoreDocs;
 			for( ScoreDoc hit : hits){
 				Document hitDocument = searcher.doc(hit.doc);
